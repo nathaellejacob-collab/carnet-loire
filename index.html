@@ -22,6 +22,7 @@
     --day5:#E3F0FB;
   }
   *{box-sizing:border-box;}
+  html{ overflow-x:hidden; width:100%; }
   body{
     margin:0;
     background:#FFFFFF;
@@ -29,8 +30,10 @@
     font-family:'Karla',sans-serif;
     line-height:1.55;
     font-size:16px;
+    overflow-x:hidden;
+    width:100%;
   }
-  .page{ margin:0; padding:0 0 60px; }
+  .page{ margin:0; padding:0 0 60px; max-width:100%; }
 
   .nav-bar{
     position:sticky;
@@ -42,25 +45,31 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:12px;
+    gap:8px;
+    width:100%;
   }
   .nav-bar .nav-title{
     font-family:'Fraunces',serif;
     font-weight:700;
-    font-size:15px;
+    font-size:14px;
     color:var(--ink);
     white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    min-width:0;
+    flex:1 1 auto;
   }
   .nav-bar select{
     font-family:'Karla',sans-serif;
-    font-size:14px;
+    font-size:13px;
     font-weight:700;
     color:var(--ink);
     background:var(--day5);
     border:1.5px solid var(--gold);
     border-radius:6px;
-    padding:8px 12px;
-    max-width:220px;
+    padding:8px 10px;
+    max-width:150px;
+    flex:0 0 auto;
   }
 
   .hero{
@@ -238,6 +247,9 @@
   @media(max-width:480px){
     .hero h1{ font-size:27px; }
     .day{ padding:24px 16px; }
+    .nav-bar{ padding:10px 16px; }
+    .nav-bar .nav-title{ font-size:12.5px; }
+    .nav-bar select{ max-width:120px; font-size:12px; padding:7px 8px; }
   }
 </style>
 </head>
